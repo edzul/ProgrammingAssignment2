@@ -1,15 +1,26 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These functions will calculate and cache the inverse of a certain matrix 
+## only calculating the inverse of it when it has changed
 
-## Write a short comment describing this function
-
+##Makes a special matrix object which contains functions for gettting,
+##setting the matrix data inverse and data
 makeCacheMatrix <- function(x = matrix()) {
-
+    i <- NULL
+    setdata <- function(y) {
+      x <- y
+      i <<- NULL
+    }
+    getdata <- function() x
+    setinverse <- function(inv) i <<- inv
+    getinverse <- function() i
+    list(getdata = getdata,
+         setdata = setdata,
+         setinverse = setinverse,
+         getinverse = getinverse)
 }
 
 
-## Write a short comment describing this function
-
+##This function will return the inverse of a matrix x, and calculating it only 
+##when the matrix it has changed
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+    
 }
